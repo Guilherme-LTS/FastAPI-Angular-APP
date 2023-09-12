@@ -1,0 +1,8 @@
+.custom-table {
+    background-color: #f8f9fa; /* Change this to your preferred background color */
+    border-radius: 15px; /* This will give you slightly curved borders */
+    overflow: hidden; /* This is needed to apply the border radius to the table inside the div */
+    border: 1px solid #dee2e6; /* This adds a border around the div */
+    margin-bottom: 20px; /* Adds some space between the tables */
+  }
+  
