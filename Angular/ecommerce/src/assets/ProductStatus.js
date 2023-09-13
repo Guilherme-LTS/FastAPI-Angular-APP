@@ -1,12 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const estoqueElement = document.getElementById("stock");
-  const statusElement = document.getElementById("status");
+// ProductStatus.js
 
-  if (estoqueElement && statusElement) {
-    const quantidadeDisponivel = parseInt(estoqueElement.innerText);
-    const quantidadeSugerida = 20; // Substitua pelo valor sugerido desejado
+document.addEventListener("DOMContentLoaded", function() {
+  const stockElements = document.querySelectorAll("#stock");
+  const statusElements = document.querySelectorAll("#status");
 
+  stockElements.forEach((stockElement, index) => {
+    const quantidadeDisponivel = parseInt(stockElement.textContent);
+    const quantidadeSugerida = 20;
     const diferenca = quantidadeDisponivel - quantidadeSugerida;
+
+    const statusElement = statusElements[index];
 
     if (quantidadeDisponivel < quantidadeSugerida) {
       statusElement.innerText = "Vermelho";
@@ -18,5 +21,5 @@ document.addEventListener("DOMContentLoaded", function () {
       statusElement.innerText = "Verde";
       statusElement.style.color = "green";
     }
-  }
+  });
 });

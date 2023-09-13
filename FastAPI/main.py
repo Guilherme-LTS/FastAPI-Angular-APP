@@ -1,6 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException, status, Response
 from sqlalchemy.orm import Session
 
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+import uvicorn as uvicorn
 from models import Product
 from database import engine, Base, get_db
 from repositories import ProductRepository
@@ -9,6 +12,26 @@ from schemas import ProductRequest, ProductResponse
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:4200",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+async def root():
+    return {"message": "Hello, World!"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
 @app.post("/api/produtos", response_model=ProductResponse, status_code=status.HTTP_201_CREATED)
 def create(request: ProductRequest, db: Session = Depends(get_db)):
