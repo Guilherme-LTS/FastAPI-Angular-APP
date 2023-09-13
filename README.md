@@ -27,6 +27,10 @@ Front-end:
 npm install -g @angular/cli  # Instala o Angular CLI globalmente.
 npm install --save bootstrap  # Instala o Bootstrap.
 npm install --save jquery     # Instala o jQuery.
+
+Start the server with:
+ng serve
+uvicorn main:app --reload
 ```
 ## Depoimentos sobre o Desafio
 
