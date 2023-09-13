@@ -31,5 +31,27 @@
     font-size: 1rem;
   }
   
-  
+  .green {
+    color: green;
+  }
+
+  .green:after {
+    content: 'Verde';
+  }
+
+  .yellow {
+    color: yellow;
+  }
+
+  .yellow:after {
+    content: 'Amarelo';
+  }
+
+  .red {
+    color: red;
+  }
+
+  .red:after {
+    content: 'Vermelho';
+  }
   

@@ -1,25 +1,25 @@
-// ProductStatus.js
+document.addEventListener("DOMContentLoaded", function () {
+  const estoqueElement = document.getElementById("stock");
+  const statusElement = document.getElementById("status");
 
-document.addEventListener("DOMContentLoaded", function() {
-  const stockElements = document.querySelectorAll("#stock");
-  const statusElements = document.querySelectorAll("#status");
+  if (estoqueElement && statusElement) {
+    const quantidadeDisponivel = parseInt(estoqueElement.innerText);
+    const quantidadeSugerida = 20; // Substitua pelo valor sugerido desejado
 
-  stockElements.forEach((stockElement, index) => {
-    const quantidadeDisponivel = parseInt(stockElement.textContent);
-    const quantidadeSugerida = 20;
     const diferenca = quantidadeDisponivel - quantidadeSugerida;
 
-    const statusElement = statusElements[index];
-
+    console.log(quantidadeDisponivel)
+    
     if (quantidadeDisponivel < quantidadeSugerida) {
-      statusElement.innerText = "Vermelho";
-      statusElement.style.color = "red";
+      return "red";
+      // statusElement.innerText = "Vermelho";
+      // statusElement.style.color = "red";
     } else if (diferenca <= 5) {
-      statusElement.innerText = "Amarelo";
-      statusElement.style.color = "yellow";
+      // statusElement.innerText = "Amarelo";
+      // statusElement.style.color = "yellow";
     } else {
-      statusElement.innerText = "Verde";
-      statusElement.style.color = "green";
+      // statusElement.innerText = "Verde";
+      // statusElement.style.color = "green";
     }
-  });
+  }
 });

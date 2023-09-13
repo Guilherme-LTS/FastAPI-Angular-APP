@@ -2,6 +2,8 @@
 async function getConversionRate() {
   const response = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL');
   const data = await response.json();
+  console.log('Conversion Rate Data:', data);
+
   return data.USDBRL.ask;
 }
 

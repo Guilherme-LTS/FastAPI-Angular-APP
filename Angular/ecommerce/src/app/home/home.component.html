@@ -8,12 +8,19 @@
         <p class="card-text">Estoque: <span id="stock">{{ product.estoque }}</span></p>
         <p class="card-text">Valor em Reais: R$ <span id="price-reais">{{ product.valor }}</span></p>
         <p class="card-text">Valor em Dólares: $<span id="price-dollars"></span></p>
-        <p class="card-text">Status: <span id="status"></span></p>
+        <p class="card-text" >Status: <span [ngClass]="getColor(product)" id="status"></span></p>
         <button class="btn btn-primary" id="buy-button">Comprar</button>
       </div>
     </div>
   </div>
 </div>
 
+
+
 <script src="Angular/ecommerce/src/assets/ProductStatus.js"></script>
 <script src="Angular/ecommerce/src/assets/APIConvert.js"></script>
+
+
+
+    <script> src="src/assets/ProductStatus.js"</script>
+    <script> src="src/assets/APIConvert.js"</script>
