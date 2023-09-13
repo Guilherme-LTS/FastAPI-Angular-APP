@@ -11,10 +11,6 @@
 
 Neste projeto, foi-se desenvolvido uma aplicação web que utiliza o framework FastAPI para o back-end e o Angular para o front-end. O FastAPI proporciona uma API rápida e escalável com suporte a SQLAlchemy para gerenciamento de banco de dados, enquanto o Angular permite a criação de uma interface de usuário dinâmica e responsiva.
 
-## Capturas de Tela
-
-Inclua algumas capturas de tela do seu projeto para dar aos usuários uma ideia visual do que esperar.
-
 ## Instalação
 
 Siga as instruções abaixo para começar a aplicação web FastAPI-Angular.🔧
